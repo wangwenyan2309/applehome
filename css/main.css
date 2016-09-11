@@ -1,0 +1,1263 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: 0;
+  font-family: "΢���ź�";
+}
+
+.row {
+  position: relative;
+}
+
+.row::after {
+  content: '';
+  display: block;
+  opacity: 0;
+  height: 0;
+  clear: both;
+  line-height: 0;
+}
+
+.col {
+  position: relative;
+  float: left;
+}
+
+@media screen and (max-width: 1500px) {
+  .col.l1 {
+    width: 8.33333%;
+  }
+  .col.l2 {
+    width: 16.66667%;
+  }
+  .col.l3 {
+    width: 25%;
+  }
+  .col.l4 {
+    width: 33.33333%;
+  }
+  .col.l5 {
+    width: 41.66667%;
+  }
+  .col.l6 {
+    width: 50%;
+  }
+  .col.l7 {
+    width: 58.33333%;
+  }
+  .col.l8 {
+    width: 66.66667%;
+  }
+  .col.l9 {
+    width: 75%;
+  }
+  .col.l10 {
+    width: 83.33333%;
+  }
+  .col.l11 {
+    width: 91.66667%;
+  }
+  .col.l12 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .col.m1 {
+    width: 8.33333%;
+  }
+  .col.m2 {
+    width: 16.66667%;
+  }
+  .col.m3 {
+    width: 25%;
+  }
+  .col.m4 {
+    width: 33.33333%;
+  }
+  .col.m5 {
+    width: 41.66667%;
+  }
+  .col.m6 {
+    width: 50%;
+  }
+  .col.m7 {
+    width: 58.33333%;
+  }
+  .col.m8 {
+    width: 66.66667%;
+  }
+  .col.m9 {
+    width: 75%;
+  }
+  .col.m10 {
+    width: 83.33333%;
+  }
+  .col.m11 {
+    width: 91.66667%;
+  }
+  .col.m12 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .col.s1 {
+    width: 8.33333%;
+  }
+  .col.s2 {
+    width: 16.66667%;
+  }
+  .col.s3 {
+    width: 25%;
+  }
+  .col.s4 {
+    width: 33.33333%;
+  }
+  .col.s5 {
+    width: 41.66667%;
+  }
+  .col.s6 {
+    width: 50%;
+  }
+  .col.s7 {
+    width: 58.33333%;
+  }
+  .col.s8 {
+    width: 66.66667%;
+  }
+  .col.s9 {
+    width: 75%;
+  }
+  .col.s10 {
+    width: 83.33333%;
+  }
+  .col.s11 {
+    width: 91.66667%;
+  }
+  .col.s12 {
+    width: 100%;
+  }
+}
+
+@font-face {
+  font-family: "cuti";
+  src: url("../font/cuti.woff") format("woff");
+}
+
+@font-face {
+  font-family: "jixi";
+  src: url("../font/jixi.woff") format("woff");
+}
+
+@font-face {
+  font-family: "xi";
+  src: url("../font/xi.woff") format("woff");
+}
+
+@font-face {
+  font-family: "normal";
+  src: url("../font/normal.woff") format("woff");
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #f2f2f2;
+  font-family: 'normal';
+}
+
+body.active {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.header {
+  width: 100%;
+  height: 44px;
+  position: relative;
+  z-index: 999999;
+  background: #333333;
+}
+
+@media screen and (max-width: 750px) {
+  .header {
+    height: 48px;
+  }
+}
+
+.header-inner {
+  max-width: 1024px;
+  height: 44px;
+  line-height: 44px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 750px) {
+  .header-inner {
+    padding-left: 0;
+    padding-right: 0;
+    height: 48px;
+    line-height: 48px;
+  }
+}
+
+.header-inner .nav {
+  height: 44px;
+  text-align: justify;
+}
+
+@media screen and (max-width: 750px) {
+  .header-inner .nav {
+    display: none;
+  }
+}
+
+.header-inner .nav::after {
+  width: 100%;
+  content: '';
+  line-height: 44px;
+  height: 0;
+  display: inline-block;
+}
+
+.header-inner .nav .logo {
+  background: url(../imgs/logo.svg) no-repeat center center;
+  width: 40px;
+}
+
+.header-inner .nav .Mac {
+  background: url(../imgs/Mac.svg) no-repeat center center;
+  width: 51px;
+}
+
+.header-inner .nav .iPad {
+  background: url(../imgs/iPad.svg) no-repeat center center;
+  width: 50px;
+}
+
+.header-inner .nav .iPhone {
+  background: url(../imgs/iPhone.svg) no-repeat center center;
+  width: 68px;
+}
+
+.header-inner .nav .Watch {
+  background: url(../imgs/Watch.svg) no-repeat center center;
+  width: 64px;
+}
+
+.header-inner .nav .TV {
+  background: url(../imgs/TV.svg) no-repeat center center;
+  width: 40px;
+}
+
+.header-inner .nav .Music {
+  background: url(../imgs/Music.svg) no-repeat center center;
+  width: 60px;
+}
+
+.header-inner .nav .Support {
+  background: url(../imgs/Support.svg) no-repeat center center;
+  width: 77px;
+}
+
+.header-inner .nav .Search {
+  background: url(../imgs/Search.svg) no-repeat center center;
+  width: 40px;
+}
+
+.header-inner .nav .Bag {
+  background: url(../imgs/Bag.svg) no-repeat center center;
+  width: 38px;
+}
+
+.header-inner .nav li {
+  position: relative;
+  z-index: 300;
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  opacity: 1;
+  transition: all 0.8s ease;
+}
+
+.header-inner .nav li .del {
+  width: 100%;
+  height: 100%;
+  /*display:none;*/
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.header-inner .nav li .del.huan {
+  background: #333333;
+  z-index: 11;
+  cursor: pointer;
+}
+
+.header-inner .nav li .del.huan .zuo {
+  transform: rotateZ(45deg);
+  transform-origin: 0 100%;
+  opacity: 1;
+}
+
+.header-inner .nav li .del.huan .you {
+  transform: rotateZ(-45deg);
+  transform-origin: 0 100%;
+  opacity: 1;
+}
+
+.header-inner .nav li .del .zuo {
+  width: 1px;
+  height: 18px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 12px;
+  background: white;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.header-inner .nav li .del .you {
+  width: 1px;
+  height: 18px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 12px;
+  background: white;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.header-inner .nav li:hover {
+  opacity: 0.6;
+}
+
+.header-inner .nav li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.header-inner .nav li span {
+  display: none;
+}
+
+.header-inner .search-box {
+  color: #999999;
+  font-family: 'normal';
+  width: 682px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  transition: all 0.6s ease;
+  /*display: none;*/
+  transform: translateX(200px);
+  opacity: 0;
+}
+
+.header-inner .search-box .itemBox {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 8px;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.header-inner .search-box .itemBox span {
+  width: 100%;
+  line-height: 30px;
+  height: 30px;
+  display: block;
+  padding-left: 30px;
+  box-sizing: border-box;
+  font-size: 12px;
+  transform: translateX(200px);
+  transition: all 0.5s ease;
+  font-family: 'normal';
+}
+
+.header-inner .search-box .itemBox ul {
+  display: block;
+  width: 100%;
+  line-height: 30px;
+}
+
+.header-inner .search-box .itemBox ul li {
+  display: block;
+  line-height: 30px;
+  height: 30px;
+  padding-left: 48px;
+  box-sizing: border-box;
+  transform: translateX(200px);
+  cursor: pointer;
+  font-family: 'normal';
+}
+
+.header-inner .search-box .itemBox ul li:hover {
+  background: #f2f2f2;
+  color: #0088cc;
+}
+
+@media screen and (max-width: 750px) {
+  .header-inner .search-box {
+    display: none;
+  }
+}
+
+.header-inner .search-box.searching {
+  /*display: block;*/
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.header-inner .search-box.searching .itemBox span {
+  transform: translateX(0);
+}
+
+.header-inner .search-box.searching .itemBox ul li {
+  transform: translateX(0);
+}
+
+.header-inner .search-box.searching .itemBox ul li:nth-child(1) {
+  transition: all 0.7s ease;
+}
+
+.header-inner .search-box.searching .itemBox ul li:nth-child(2) {
+  transition: all 0.8s ease;
+}
+
+.header-inner .search-box.searching .itemBox ul li:nth-child(3) {
+  transition: all 0.9s ease;
+}
+
+.header-inner .search-box.searching .itemBox ul li:nth-child(4) {
+  transition: all 1s ease;
+}
+
+.header-inner .search-box.searching .itemBox ul li:nth-child(5) {
+  transition: all 1.1s ease;
+}
+
+.header-inner .search-box .search-button {
+  width: 44px;
+  height: 44px;
+  float: left;
+  background: url(../imgs/search.svg) no-repeat center center;
+}
+
+.header-inner .search-box input {
+  font-family: 'normal';
+  float: right;
+  display: block;
+  width: 638px;
+  height: 44px;
+  border: none;
+  outline: none;
+  background: transparent;
+  line-height: 44px;
+  font-size: 18px;
+  color: white;
+}
+
+.header-inner .nav-phone {
+  position: relative;
+  text-align: justify;
+  display: none;
+  width: 100%;
+  height: 48px;
+}
+
+.header-inner .nav-phone .itemBox-phone {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background: #000;
+  position: absolute;
+  left: 0;
+  top: 48px;
+  color: white;
+  transition: all 0.6s ease;
+}
+
+.header-inner .nav-phone .itemBox-phone.dong ul li {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+.header-inner .nav-phone .itemBox-phone.dong ul li:nth-child(1) {
+  transition: all 0.3s ease;
+}
+
+.header-inner .nav-phone .itemBox-phone.dong ul li:nth-child(2) {
+  transition: all 0.4s ease;
+}
+
+.header-inner .nav-phone .itemBox-phone.dong ul li:nth-child(3) {
+  transition: all 0.5s ease;
+}
+
+.header-inner .nav-phone .itemBox-phone.dong ul li:nth-child(4) {
+  transition: all 0.6s ease;
+}
+
+.header-inner .nav-phone .itemBox-phone.dong ul li:nth-child(5) {
+  transition: all 0.7s ease;
+}
+
+.header-inner .nav-phone .itemBox-phone.dong ul li:nth-child(6) {
+  transition: all 0.8s ease;
+}
+
+.header-inner .nav-phone .itemBox-phone.dong ul li:nth-child(7) {
+  transition: all 0.9s ease;
+}
+
+.header-inner .nav-phone .itemBox-phone.dong ul li:nth-child(8) {
+  transition: all 1s ease;
+}
+
+.header-inner .nav-phone .itemBox-phone ul {
+  font-family: 'normal';
+  display: block;
+  padding: 40px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+.header-inner .nav-phone .itemBox-phone ul li {
+  font-family: 'normal';
+  width: 100%;
+  height: 48px;
+  transform: translate(-60px, -60px);
+  overflow: hidden;
+  box-sizing: border-box;
+  border-bottom: 1px solid #333333;
+  opacity: 0;
+  transition: all 0.6s ease;
+  position: relative;
+}
+
+.header-inner .nav-phone .itemBox-phone ul li .search-phone {
+  width: 20px;
+  height: 48px;
+  float: left;
+  background: url(../imgs/searchs.svg) no-repeat center center;
+}
+
+.header-inner .nav-phone .itemBox-phone ul li input {
+  font-family: 'normal';
+  padding-left: 5px;
+  width: 200px;
+  height: 48px;
+  line-height: 48px;
+  border: none;
+  outline: none;
+  float: left;
+  display: block;
+  color: white;
+  background: transparent;
+}
+
+.header-inner .nav-phone .itemBox-phone ul li ul li:nth-child(1) {
+  transition: all 0.9s ease;
+  font-family: 'normal';
+}
+
+.header-inner .nav-phone .itemBox-phone ul li ul li:nth-child(2) {
+  transition: all 0.8s ease;
+  font-family: 'normal';
+}
+
+.header-inner .nav-phone .itemBox-phone ul li ul li:nth-child(3) {
+  transition: all 0.7s ease;
+  font-family: 'normal';
+}
+
+.header-inner .nav-phone .itemBox-phone ul li ul li:nth-child(4) {
+  transition: all 0.6s ease;
+  font-family: 'normal';
+}
+
+.header-inner .nav-phone .itemBox-phone ul li ul li:nth-child(5) {
+  transition: all 0.5s ease;
+  font-family: 'normal';
+}
+
+.header-inner .nav-phone .itemBox-phone ul li ul li:nth-child(6) {
+  transition: all 0.4s ease;
+  font-family: 'normal';
+}
+
+.header-inner .nav-phone .itemBox-phone ul li ul li:nth-child(7) {
+  transition: all 0.3s ease;
+  font-family: 'normal';
+}
+
+.header-inner .nav-phone .itemBox-phone ul li ul li:nth-child(8) {
+  transition: all 0.2s ease;
+  font-family: 'normal';
+}
+
+.header-inner .nav-phone .itemBox-phone ul li a {
+  font-family: 'normal';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  text-decoration: none;
+  color: white;
+  transition: all 0.6s ease;
+}
+
+.header-inner .nav-phone .itemBox-phone ul li a:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 750px) {
+  .header-inner .nav-phone {
+    display: block;
+  }
+}
+
+.header-inner .nav-phone::after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  line-height: 48px;
+  opacity: 0;
+}
+
+.header-inner .nav-phone li {
+  transition: opacity 0.6s ease;
+}
+
+.header-inner .nav-phone li:hover {
+  opacity: 0.6;
+}
+
+.header-inner .nav-phone li span {
+  display: none;
+}
+
+.header-inner .nav-phone li a {
+  width: 100%;
+  height: 100%;
+}
+
+.header-inner .nav-phone .list-phone {
+  cursor: pointer;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+
+.header-inner .nav-phone .list-phone .heng {
+  width: 17px;
+  height: 1px;
+  background: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 20px;
+  transition: all 0.5s ease;
+}
+
+.header-inner .nav-phone .list-phone .heng.zhuan {
+  transform: rotateZ(135deg);
+  top: 23px;
+}
+
+.header-inner .nav-phone .list-phone .shu {
+  width: 17px;
+  height: 1px;
+  background: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 20px;
+  transition: all 0.5s ease;
+}
+
+.header-inner .nav-phone .list-phone .shu.zhuan {
+  transform: rotateZ(45deg);
+  bottom: 24px;
+}
+
+.header-inner .nav-phone .logo-phone {
+  cursor: pointer;
+  display: inline-block;
+  width: 40px;
+  height: 48px;
+  background: url(../imgs/logos.svg) no-repeat center center;
+}
+
+.header-inner .nav-phone .bag-phone {
+  cursor: pointer;
+  display: inline-block;
+  width: 50px;
+  height: 48px;
+  background: url(../imgs/bags.svg) no-repeat center center;
+  transition: all 0.6s ease;
+}
+
+.bannerBox {
+  width: 100%;
+  height: 606px;
+  position: relative;
+}
+
+@media screen and (max-width: 750px) {
+  .bannerBox {
+    height: 514px;
+  }
+}
+
+.bannerBox .zhezhao {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #000;
+  opacity: 0.3;
+  z-index: 600;
+  display: none;
+}
+
+.bannerBox .zhezhao.active {
+  display: block;
+}
+
+.bannerBox .btn-left {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 40px;
+  background: url("../imgs/ljian.jpg") no-repeat;
+  background-position: center center;
+  background-size: 100%;
+  z-index: 500;
+  width: 32px;
+  height: 72px;
+  display: none;
+  cursor: pointer;
+}
+
+.bannerBox .btn-left.over {
+  display: block;
+}
+
+.bannerBox .btn-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 40px;
+  background: green;
+  z-index: 500;
+  width: 32px;
+  height: 72px;
+  background: url("../imgs/rjian.jpg") no-repeat;
+  background-position: center center;
+  background-size: 100%;
+  display: none;
+  cursor: pointer;
+}
+
+.bannerBox .btn-right.over {
+  display: block;
+}
+
+.bannerBox .banner {
+  overflow: hidden;
+  background: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.bannerBox .banner li a {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.bannerBox .banner li:nth-child(1) {
+  overflow: hidden;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../imgs/banner1.jpg") no-repeat 60% 220px;
+}
+
+@media screen and (max-width: 750px) {
+  .bannerBox .banner li:nth-child(1) {
+    background: url("../imgs/banner1s.jpg") no-repeat center 70%;
+  }
+}
+
+.bannerBox .banner li:nth-child(1) .iphone6s {
+  width: 206px;
+  height: 40px;
+  background: url("../imgs/iphone6s.png") no-repeat center center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 106px;
+}
+
+@media screen and (max-width: 750px) {
+  .bannerBox .banner li:nth-child(1) .iphone6s {
+    top: 150px;
+    background: url("../imgs/iphone6.png") no-repeat center center;
+  }
+}
+
+.bannerBox .banner li:nth-child(1) .da {
+  font-family: 'xi';
+  color: #333333;
+  display: block;
+  line-height: 30px;
+  text-align: center;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 24px;
+  top: 160px;
+}
+
+@media screen and (max-width: 750px) {
+  .bannerBox .banner li:nth-child(1) .da {
+    display: none;
+  }
+}
+
+.bannerBox .banner li:nth-child(1) .xiao {
+  font-family: 'xi';
+  color: #333333;
+  line-height: 30px;
+  text-align: center;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 190px;
+  display: none;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 750px) {
+  .bannerBox .banner li:nth-child(1) .xiao {
+    display: block;
+  }
+}
+
+.bannerBox .banner li:nth-child(2) {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../imgs/banner2.jpg") no-repeat 60% 185px;
+}
+
+@media screen and (max-width: 750px) {
+  .bannerBox .banner li:nth-child(2) {
+    background: url("../imgs/banner2s.jpg") no-repeat center 70%;
+  }
+}
+
+.bannerBox .banner li:nth-child(2) .iphone6s {
+  font-family: 'cuti';
+  color: #333333;
+  text-align: center;
+  height: 40px;
+  font-size: 40px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 90px;
+}
+
+@media screen and (max-width: 750px) {
+  .bannerBox .banner li:nth-child(2) .iphone6s {
+    top: 140px;
+    font-size: 32px;
+  }
+}
+
+.bannerBox .banner li:nth-child(2) p {
+  font-family: 'xi';
+  color: #333333;
+  line-height: 30px;
+  text-align: center;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 24px;
+  top: 150px;
+}
+
+@media screen and (max-width: 750px) {
+  .bannerBox .banner li:nth-child(2) p {
+    top: 180px;
+    font-size: 18px;
+  }
+}
+
+.bannerBox .banner li:nth-child(3) {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../imgs/banner3.jpg") no-repeat center 60%;
+}
+
+@media screen and (max-width: 750px) {
+  .bannerBox .banner li:nth-child(3) {
+    background: url("../imgs/banner3s.jpg") no-repeat center 70%;
+  }
+}
+
+.bannerBox .banner li:nth-child(3) .iphone6s {
+  width: 184px;
+  height: 40px;
+  background: url("../imgs/watch.png") no-repeat center center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 90px;
+}
+
+@media screen and (max-width: 750px) {
+  .bannerBox .banner li:nth-child(3) .iphone6s {
+    top: 140px;
+    background: url("../imgs/watchs.png") no-repeat center center;
+  }
+}
+
+.bannerBox .banner li:nth-child(3) p {
+  font-family: 'xi';
+  color: #333333;
+  line-height: 30px;
+  text-align: center;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 24px;
+  top: 150px;
+}
+
+@media screen and (max-width: 750px) {
+  .bannerBox .banner li:nth-child(3) p {
+    top: 180px;
+    font-size: 18px;
+  }
+}
+
+.bannerBox .banner li:nth-child(4) {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../imgs/banner4.png") no-repeat center 65%;
+}
+
+@media screen and (max-width: 750px) {
+  .bannerBox .banner li:nth-child(4) {
+    background: url("../imgs/banner4s.png") no-repeat center 70%;
+  }
+}
+
+.bannerBox .banner li:nth-child(4) .iphone6s {
+  font-family: 'cuti';
+  color: #333333;
+  text-align: center;
+  height: 40px;
+  font-size: 40px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 90px;
+}
+
+@media screen and (max-width: 750px) {
+  .bannerBox .banner li:nth-child(4) .iphone6s {
+    top: 140px;
+    font-size: 32px;
+  }
+}
+
+.bannerBox .banner li:nth-child(4) p {
+  font-family: 'xi';
+  color: #333333;
+  line-height: 30px;
+  text-align: center;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 24px;
+  top: 150px;
+}
+
+@media screen and (max-width: 750px) {
+  .bannerBox .banner li:nth-child(4) p {
+    top: 180px;
+    font-size: 18px;
+  }
+}
+
+.bannerBox .banner .active {
+  display: block !important;
+  transition: all 0.6s ease;
+  transform: translateX(0);
+}
+
+.bannerBox .banner .right {
+  display: block !important;
+  transform: translateX(100%);
+}
+
+.bannerBox .banner .left {
+  display: block !important;
+  transform: translateX(-100%);
+}
+
+.bannerBox .button {
+  display: block;
+  width: 112px;
+  height: 8px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 10px;
+  z-index: 500;
+}
+
+.bannerBox .button li {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  background: #999999;
+  cursor: pointer;
+}
+
+.bannerBox .button li.hot {
+  box-shadow: 0 0 0 1px #187dce;
+  background: transparent;
+}
+
+.content {
+  width: 100%;
+  overflow: hidden;
+}
+
+.content .row {
+  width: 100%;
+  overflow: hidden;
+}
+
+.content .row .col {
+  height: 200px;
+  background: blue;
+  box-sizing: border-box;
+  border-top: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+}
+
+.content .row .col:nth-child(1) {
+  background: url(../imgs/col1.jpg) no-repeat center center;
+}
+
+.content .row .col:nth-child(2) {
+  background: url(../imgs/col2.jpg) no-repeat center center;
+}
+
+.content .row .col:nth-child(3) {
+  background: url(../imgs/col3.jpg) no-repeat center center;
+}
+
+.content .row .col:nth-child(4) {
+  background: url(../imgs/col4.jpg) no-repeat center center;
+}
+
+.listBox {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.listBox .list-inner {
+  box-sizing: border-box;
+  padding: 30px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+@media screen and (max-width: 1500px) {
+  .listBox .list-inner {
+    width: 1000px;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .listBox .list-inner {
+    width: 100%;
+  }
+}
+
+.listBox .list-inner .row {
+  width: 100%;
+  font-family: 'normal';
+  font-size: 10px;
+}
+
+@media screen and (max-width: 1500px) {
+  .listBox .list-inner .row .col {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .listBox .list-inner .row .col {
+    width: 100%;
+  }
+}
+
+.listBox .list-inner .row .col p {
+  font-family: 'normal';
+  line-height: 20px;
+  width: 100%;
+  height: 20px;
+  position: relative;
+  cursor: default;
+}
+
+.listBox .list-inner .row .col p span {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  line-height: 20px;
+  display: none;
+}
+
+@media screen and (max-width: 1070px) {
+  .listBox .list-inner .row .col p {
+    cursor: pointer;
+    border-bottom: 1px solid #e3e3e3;
+    line-height: 40px;
+    font-size: 16px;
+    height: 40px;
+  }
+  .listBox .list-inner .row .col p span {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    line-height: 40px;
+    display: block;
+  }
+}
+
+.listBox .list-inner .row .col ul {
+  transition: all 0.8s ease;
+  width: 100%;
+}
+
+@media screen and (max-width: 1070px) {
+  .listBox .list-inner .row .col ul {
+    display: none;
+  }
+  .listBox .list-inner .row .col ul.active {
+    display: block;
+  }
+}
+
+.listBox .list-inner .row .col ul li {
+  font-family: 'normal';
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.listBox .list-inner .row .col ul li a {
+  font-family: 'normal';
+  color: #666666;
+  text-decoration: none;
+}
+
+.listBox .list-inner .row .col ul li a:hover {
+  color: #000;
+  text-decoration: underline;
+}

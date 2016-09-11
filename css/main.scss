@@ -1,0 +1,795 @@
+@import "base.scss";
+@font-face {
+  font-family: "cuti";
+  src:url('../font/cuti.woff') format("woff")
+}
+@font-face {
+  font-family: "jixi";
+  src:url('../font/jixi.woff') format("woff")
+}
+@font-face {
+  font-family: "xi";
+  src:url('../font/xi.woff') format("woff")
+}
+@font-face {
+  font-family: "normal";
+  src:url('../font/normal.woff') format("woff")
+}
+html{
+  width:100%;
+  height:100%;
+}
+body{
+  background: #f2f2f2;
+  &.active{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+  }
+  font-family: 'normal';
+}
+.header{
+  width:100%;
+  height:44px;
+  position: relative;
+  z-index: 999999;
+  background: #333333;
+  @media screen and (max-width: 750px){
+
+    height:48px;
+  }
+}
+.header-inner{
+  max-width: 1024px;
+  height:44px;
+  line-height: 44px;
+
+  @include zuoyou;
+  padding-left:12px;
+  padding-right:12px;
+  box-sizing: border-box;
+  @media screen and (max-width: 750px){
+    padding-left: 0;
+    padding-right: 0;
+    height:48px;
+    line-height: 48px;
+  }
+  .nav{
+
+    @media screen and (max-width: 750px){
+      display: none;
+    }
+    height:44px;
+    text-align: justify;
+    &::after{
+      width:100%;
+      content:'';
+      line-height: 44px;
+      height:0;
+      display: inline-block;
+    }
+    $nav-list:(
+    logo:40px,Mac:51px,iPad:50px,iPhone:68px,Watch:64px,TV:40px,Music:60px,Support:77px,Search:40px,Bag:38px,
+    );
+    @each $k in map_keys($nav-list){
+       .#{$k}{
+         background: url(../imgs/#{$k}.svg) no-repeat center center;
+         width:map_get($nav-list,$k);
+       }
+    }
+    li{
+      position: relative;
+      z-index: 300;
+      display: inline-block;
+      height:44px;
+      line-height: 44px;
+      opacity:1;
+      transition:all 0.8s ease;
+      .del{
+        width:100%;
+        height:100%;
+        /*display:none;*/
+        @include zhong;
+
+        &.huan{
+          background: #333333;
+          z-index: 11;
+          cursor:pointer;
+          .zuo{
+            transform: rotateZ(45deg);
+            transform-origin: 0 100%;
+            opacity: 1;
+          }
+          .you{
+            transform: rotateZ(-45deg);
+            transform-origin: 0 100%;
+            opacity: 1;
+          }
+        }
+        .zuo{
+          width:1px;
+          height:18px;
+          @include shangxia;
+          left:12px;
+          background: white;
+          opacity: 0;
+          transition: all 0.5s ease;
+        }
+        .you{
+          width:1px;
+          height:18px;
+          @include shangxia;
+          right:12px;
+          background: white;
+          opacity: 0;
+          transition: all 0.5s ease;
+        }
+      }
+      &:hover{
+        opacity:0.6;
+      }
+      a{
+        display: block;
+        width:100%;
+        height:100%;
+        position: relative;
+        z-index: 10;
+      }
+      span{
+        display: none;
+      }
+    }
+
+  }
+  .search-box{
+    color:#999999;
+    font-family: 'normal';
+    .itemBox{
+      width:100%;
+      overflow: hidden;
+      padding:20px 8px;
+      box-sizing: border-box;
+      background: #fff;
+
+      span{
+        width:100%;
+        line-height:30px;
+        height:30px;
+        display: block;
+        padding-left:30px;
+        box-sizing: border-box;
+        font-size: 12px;
+        transform: translateX(200px);
+        transition: all 0.5s ease;
+        font-family: 'normal';
+      }
+      ul{
+        display: block;
+        width:100%;
+        line-height: 30px;
+        li{
+          display: block;
+          line-height: 30px;
+          height:30px;
+          padding-left: 48px;
+          box-sizing: border-box;
+          transform: translateX(200px);
+          cursor:pointer;
+          font-family: 'normal';
+          &:hover{
+            background: #f2f2f2;
+            color:#0088cc;
+          }
+        }
+
+      }
+    }
+    @media screen and (max-width: 750px){
+      display: none;
+    }
+    width:682px;
+    @include zuoyou;
+    top:0;
+
+    transition:all 0.6s ease;
+    /*display: none;*/
+    transform: translateX(200px);
+    opacity:0;
+    &.searching{
+      /*display: block;*/
+      transform: translateX(0);
+      .itemBox span{
+        transform: translateX(0);
+      }
+      .itemBox ul li{
+        transform: translateX(0);
+      }
+      @for $i from 1 through 5{
+        .itemBox ul li:nth-child(#{$i}){
+          transition:all $i*0.1+0.6s ease;
+        }
+      }
+      opacity:1;
+
+    }
+    .search-button{
+      @include cute(44px);
+      float:left;
+      background: url(../imgs/search.svg) no-repeat center center;
+    }
+    input{
+      font-family: 'normal';
+      float:right;
+      display: block;
+      width:638px;
+      height:44px;
+      border:none;
+      outline: none;
+      background: rgba(0,0,0,0);
+
+      line-height: 44px;
+      font-size: 18px;
+      color:white;
+    }
+  }
+  .nav-phone{
+    position: relative;
+    .itemBox-phone{
+      &.dong{
+
+         ul li{
+           transform:translate(0px,0px);
+           opacity:1;
+         }
+        @for $i from 1 through 8{
+          ul li:nth-child(#{$i}){
+            transition:all $i*0.1+0.2s ease;
+          }
+        }
+      }
+      width:100%;
+      height:0;
+      overflow: hidden;
+      background: #000;
+      position: absolute;
+      left:0;
+      top:48px;
+      color:white;
+      transition:all 0.6s ease;
+     ul{
+       font-family: 'normal';
+       display: block;
+       padding:40px;
+       box-sizing: border-box;
+       width:100%;
+       height:100%;
+       li{
+         font-family: 'normal';
+         .search-phone{
+           width:20px;
+           height:48px;
+           float:left;
+           background: url(../imgs/searchs.svg) no-repeat center center;
+         }
+         input{
+           font-family: 'normal';
+           padding-left: 5px;
+           width:200px;
+           height:48px;
+           line-height: 48px;
+           border: none;
+           outline: none;
+           float:left;
+           display: block;
+           color:white;
+           background:rgba(0,0,0,0);
+         }
+         width:100%;
+         height:48px;
+         transform: translate(-60px,-60px);
+         @for $i from 1 through 8{
+           ul li:nth-child(#{$i}){
+             transition:all 1-$i*0.1s ease;
+             font-family: 'normal';
+           }
+         }
+         overflow: hidden;
+         box-sizing: border-box;
+         border-bottom: 1px solid #333333;
+         opacity:0;
+
+         transition: all 0.6s ease;
+         position: relative;
+         a{
+           font-family: 'normal';
+           display: block;
+           width:100%;
+           height:100%;
+           @include zhong;
+           text-decoration: none;
+           color:white;
+           transition:all 0.6s ease ;
+           &:hover{
+             opacity:0.6;
+           }
+         }
+
+       }
+     }
+    }
+    text-align: justify;
+    display: none;
+    @media screen and (max-width: 750px){
+      display:block;
+    }
+    width:100%;
+    height:48px;
+    &::after{
+      content:'';
+      display: inline-block;
+      width:100%;
+      height:0;
+      line-height: 48px;
+      opacity: 0;
+    }
+
+    li{
+      transition:opacity 0.6s ease;
+      &:hover{
+        opacity:0.6;
+      }
+      span {
+        display: none;
+      }
+      a{
+        width:100%;
+        height:100%;
+      }
+    }
+    .list-phone{
+      cursor: pointer;
+      display: inline-block;
+      width:48px;
+      height:48px;
+      position: relative;
+      .heng{
+        width:17px;
+        height:1px;
+        background: white;
+        @include zuoyou;
+        top:20px;
+        transition:all 0.5s ease;
+        &.zhuan{
+          transform: rotateZ(135deg);
+          top:23px;
+        }
+      }
+      .shu{
+        width:17px;
+        height:1px;
+        background: white;
+        @include zuoyou;
+        bottom:20px;
+        transition:all 0.5s ease;
+        &.zhuan{
+          transform: rotateZ(45deg);
+          bottom:24px;
+        }
+      }
+    }
+    .logo-phone{
+
+      cursor: pointer;
+      display: inline-block;
+      width:40px;
+      height:48px;
+      background: url(../imgs/logos.svg) no-repeat center center;
+    }
+    .bag-phone{
+      cursor: pointer;
+      display: inline-block;
+      width:50px;
+      height:48px;
+      background: url(../imgs/bags.svg) no-repeat center center;
+      transition: all 0.6s ease;
+    }
+  }
+}
+.bannerBox{
+  width:100%;
+  height:606px;
+  @include ons{
+    height:514px;
+  }
+  position: relative;
+  .zhezhao{
+    width:100%;
+    height:100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #000;
+    opacity: 0.3;
+    z-index: 600;
+    display: none;
+    &.active{
+      display: block;
+    }
+  }
+  .btn-left{
+    @include shangxia;
+    left:40px;
+    background: url("../imgs/ljian.jpg") no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    z-index: 500;
+    width:32px;
+    height:72px;
+    display: none;
+    cursor: pointer;
+    &.over{
+      display: block;
+    }
+  }
+  .btn-right{
+    @include shangxia;
+    right:40px;
+    background: green;
+    z-index: 500;
+    width:32px;
+    height:72px;
+    background: url("../imgs/rjian.jpg") no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    display: none;
+    cursor: pointer;
+    &.over{
+      display: block;
+    }
+  }
+  .banner{
+    overflow: hidden;
+    background: white;
+    @include zhong;
+    width:100%;
+    height:100%;
+    li{
+      a{
+        width:100%;
+        height:100%;
+        position: absolute;
+        left:0;
+        top:0;
+        z-index: 2;
+      }
+    }
+    li:nth-child(1){
+      overflow: hidden;
+      display: none;
+      position: absolute;
+      left:0;
+      top:0;
+      width:100%;
+      height:100%;
+      background: url("../imgs/banner1.jpg") no-repeat 60% 220px;
+      @include ons{
+        background: url("../imgs/banner1s.jpg") no-repeat center 70% ;
+      }
+      .iphone6s{
+        width:206px;
+        height:40px;
+        background: url("../imgs/iphone6s.png") no-repeat center center;
+        @include zuoyou;
+        top:106px;
+        @include ons{
+          top:150px;
+          background: url("../imgs/iphone6.png") no-repeat center center;
+        }
+      }
+      .da{
+        font-family: 'xi';
+        color:#333333;
+        display: block;
+        line-height: 30px;
+        text-align: center;
+        height:30px;
+        @include zuoyou;
+        font-size: 24px;
+        top:160px;
+        @include ons{
+          display: none;
+        }
+      }
+      .xiao{
+        font-family: 'xi';
+        color:#333333;
+        line-height: 30px;
+        text-align: center;
+        height:30px;
+        @include zuoyou;
+        top:190px;
+        display: none;
+        font-size: 16px;
+        @include ons{
+
+          display: block;
+        }
+      }
+    }
+    li:nth-child(2){
+      display: none;
+      position: absolute;
+      left:0;
+      top:0;
+      width:100%;
+      height:100%;
+      background: url("../imgs/banner2.jpg") no-repeat 60% 185px;
+      @include ons{
+        background: url("../imgs/banner2s.jpg") no-repeat center 70%;
+      }
+      .iphone6s{
+        font-family: 'cuti';
+        color:#333333;
+        text-align: center;
+        height:40px;
+        font-size: 40px;
+        @include zuoyou;
+        top:90px;
+        @include ons{
+          top:140px;
+          font-size:32px;
+        }
+      }
+      p{
+        font-family: 'xi';
+        color:#333333;
+        line-height: 30px;
+        text-align: center;
+        height:30px;
+        @include zuoyou;
+        font-size: 24px;
+        top:150px;
+        @include ons{
+          top:180px;
+          font-size: 18px;
+        }
+      }
+
+    }
+    li:nth-child(3){
+      display: none;
+      position: absolute;
+      left:0;
+      top:0;
+      width:100%;
+      height:100%;
+      background: url("../imgs/banner3.jpg") no-repeat center 60%;
+      @include ons{
+        background: url("../imgs/banner3s.jpg") no-repeat center 70%;
+      }
+      .iphone6s{
+        width:184px;
+        height:40px;
+        background: url("../imgs/watch.png") no-repeat center center;
+        @include zuoyou;
+        top:90px;
+        @include ons{
+          top:140px;
+          background: url("../imgs/watchs.png") no-repeat center center;
+        }
+      }
+      p{
+        font-family: 'xi';
+        color:#333333;
+        line-height: 30px;
+        text-align: center;
+        height:30px;
+        @include zuoyou;
+        font-size: 24px;
+        top:150px;
+        @include ons{
+          top:180px;
+          font-size: 18px;
+        }
+      }
+    }
+    li:nth-child(4){
+      display: none;
+      position: absolute;
+      left:0;
+      top:0;
+      width:100%;
+      height:100%;
+      background: url("../imgs/banner4.png") no-repeat center 65%;
+      @include ons{
+        background: url("../imgs/banner4s.png") no-repeat center 70%;
+      }
+      .iphone6s{
+        font-family: 'cuti';
+        color:#333333;
+        text-align: center;
+        height:40px;
+        font-size: 40px;
+        @include zuoyou;
+        top:90px;
+        @include ons{
+          top:140px;
+          font-size:32px;
+        }
+      }
+      p{
+        font-family: 'xi';
+        color:#333333;
+        line-height: 30px;
+        text-align: center;
+        height:30px;
+        @include zuoyou;
+        font-size: 24px;
+        top:150px;
+        @include ons{
+          top:180px;
+          font-size: 18px;
+        }
+      }
+    }
+    .active{
+      display: block!important;
+      transition: all 0.6s ease;
+      transform: translateX(0);
+    }
+    .right{
+      display: block!important;
+      transform: translateX(100%);
+    }
+    .left{
+      display: block!important;
+      transform: translateX(-100%);
+    }
+  }
+
+
+  .button{
+    display: block;
+    width:112px;
+    height:8px;
+    @include zuoyou;
+    bottom:10px;
+    z-index: 500;
+    li {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      float: left;
+      margin-left: 10px;
+      margin-right: 10px;
+      background: #999999;
+      cursor: pointer;
+      &.hot{
+        box-shadow: 0 0 0 1px #187dce;
+        background: transparent;
+      }
+    }
+  }
+}
+.content{
+  width:100%;
+  overflow: hidden;
+  .row{
+    width:100%;
+    overflow: hidden;
+    .col{
+      height:200px;
+      background:blue;
+      box-sizing: border-box;
+      border-top: 2px solid #ffffff;
+      border-right:2px solid #ffffff;
+    }
+    .col:nth-child(1){
+      background: url(../imgs/col1.jpg) no-repeat center center;
+
+    }
+    .col:nth-child(2){
+      background: url(../imgs/col2.jpg) no-repeat center center;
+
+    }
+    .col:nth-child(3){
+      background: url(../imgs/col3.jpg) no-repeat center center;
+
+    }
+    .col:nth-child(4){
+      background: url(../imgs/col4.jpg) no-repeat center center;
+
+    }
+  }
+
+}
+.listBox{
+  width:100%;
+  box-sizing: border-box;
+  position: relative;
+  .list-inner{
+    box-sizing: border-box;
+    padding:30px;
+    position: absolute;
+    left:0;
+    right:0;
+    margin:auto;
+   @include onl{
+     width:1000px;
+   }
+    @include onm{
+      width:100%;
+    }
+    .row{
+      width:100%;
+      font-family: 'normal';
+      font-size: 10px;
+      .col{
+        @include onl{
+          width:20%;
+        }
+        @include onm{
+          width:100%;
+        }
+        p{
+          font-family: 'normal';
+          line-height: 20px;
+          width:100%;
+          height:20px;
+          position: relative;
+          cursor:default;
+          span{
+            position: absolute;
+            right:10px;
+            top:0;
+            line-height: 20px;
+            display: none;
+          }
+          @include onm{
+            cursor:pointer;
+            border-bottom: 1px solid #e3e3e3;
+            line-height: 40px;
+            font-size: 16px;
+            height:40px;
+            span{
+              position: absolute;
+              right:10px;
+              top:0;
+              line-height: 40px;
+              display: block;
+            }
+          }
+        }
+        ul{
+
+          transition: all 0.8s ease;
+          @include onm{
+            display: none;
+            &.active{
+              display: block;
+            }
+          }
+          width:100%;
+          li{
+            font-family: 'normal';
+            width:100%;
+            height:20px;
+            line-height: 20px;
+            cursor:pointer;
+            a{
+              font-family: 'normal';
+              color:#666666;
+              text-decoration: none;
+              &:hover{
+                color:#000;
+                text-decoration: underline;
+              }
+            }
+
+          }
+        }
+
+      }
+    }
+}
+}
